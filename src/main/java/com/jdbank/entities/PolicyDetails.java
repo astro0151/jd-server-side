@@ -16,55 +16,74 @@ public class PolicyDetails {
 	private int id;
 	private String policy_name;
 	private String tenure;
-	private String premium;
-	
-	@OneToOne
-	@JoinColumn(name="insurance_id")
-	private Insurance insurance;
-	
-	
-	
-	
-	@OneToOne(mappedBy = "policy_details")
-	private Orders orders;
-	
+	private int premium;
+    private int	insurance_id;
+
 	public PolicyDetails() {
 	
 	}
 	
-	public PolicyDetails(int id, String policy_name, String tenure, String premium) {
+	
+	public PolicyDetails(int id, String policy_name, String tenure, int premium, int insurance_id) {
+		super();
 		this.id = id;
 		this.policy_name = policy_name;
 		this.tenure = tenure;
 		this.premium = premium;
-	
+		this.insurance_id = insurance_id;
 	}
 
-	public int getid() {
+
+	public int getId() {
 		return id;
 	}
-	public void setid(int id) {
+
+
+	public void setId(int id) {
 		this.id = id;
 	}
+
+
 	public String getPolicy_name() {
 		return policy_name;
 	}
+
+
 	public void setPolicy_name(String policy_name) {
 		this.policy_name = policy_name;
 	}
+
+
 	public String getTenure() {
 		return tenure;
 	}
+
+
 	public void setTenure(String tenure) {
 		this.tenure = tenure;
 	}
-	public String getPremium() {
+
+
+	public int getPremium() {
 		return premium;
 	}
-	public void setPremium(String premium) {
+
+
+	public void setPremium(int premium) {
 		this.premium = premium;
 	}
-	
+
+
+	public int getInsurance_id() {
+		return insurance_id;
+	}
+
+
+	public void setInsurance_id(int insurance_id) {
+		this.insurance_id = insurance_id;
+	}
+
+
 	@Override
 	public String toString() {
 		return "PolicyDetails [id=" + id + ", policy_name=" + policy_name + ", tenure=" + tenure

@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpSession;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/jd/vendors/s/policies/customers")
+@RequestMapping("/api/jd/vendors/policies/customers")
 public class CustomerController {
 	@Autowired
 	private CustomerRepo customer_repo ;

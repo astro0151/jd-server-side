@@ -18,36 +18,39 @@ public class Insurance {
 	private int id;
 	private String name;
 	
+	private int vendor_id;
 	
-	
-	@OneToOne
-	@JoinColumn( name="vendor_id")
-	private Vendors vendors;
-
-	@OneToOne( 
- mappedBy = "insurance")
-	private PolicyDetails policy_details;
-	
-public Vendors getVendors() {
-		return vendors;
+public Insurance(int id, String name, int vendor_id) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.vendor_id = vendor_id;
 	}
 
-	public void setVendors(Vendors vendors) {
-		this.vendors = vendors;
+//	@OneToOne
+//	@JoinColumn( name="vendor_id")
+//	private Vendors vendors;
+//
+//	@OneToOne( 
+// mappedBy = "insurance")
+//	private PolicyDetails policy_details;
+	
+public int getVendor_id() {
+		return vendor_id;
 	}
+
+	public void setVendor_id(int vendor_id) {
+		this.vendor_id = vendor_id;
+	}
+
+	
 
 public Insurance() {
 		
 	}
 
 	
-	public Insurance(int id, String name, Vendors vendors, PolicyDetails policy_details) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.vendors = vendors;
-	this.policy_details = policy_details;
-}
+
 
 	public int getId() {
 		return id;

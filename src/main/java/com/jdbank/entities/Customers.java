@@ -16,8 +16,6 @@ public class Customers {
 	private String name;
 	private String email;
 	
-	@OneToOne(mappedBy = "customers")
-	private Orders orders;
 	
 	public Customers() {
 		// TODO Auto-generated constructor stub

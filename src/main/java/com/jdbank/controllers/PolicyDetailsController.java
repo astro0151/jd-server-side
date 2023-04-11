@@ -26,9 +26,11 @@ public class PolicyDetailsController {
 	private PolicyDetailsRepo policy_details_repo ;
 	 @GetMapping("/get")
 	  public List<PolicyDetails> getAllLicInsurances(){
-
+              
 		 return policy_details_repo.findAll();
 	 }
+	 
+	 
 	 @GetMapping("/get/{policy_id}")
 	  public Optional<PolicyDetails> getVendorsWithId(@PathVariable Integer policy_id){
 		//returning data from jdb datadbase as vendors table

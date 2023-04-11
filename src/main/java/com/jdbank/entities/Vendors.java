@@ -25,9 +25,9 @@ public class Vendors {
 	
 	
 	
-	@OneToOne( mappedBy = "vendors")
-	private Insurance insurance;
-	
+//	@OneToOne( mappedBy = "vendors" , cascade = CascadeType.ALL, orphanRemoval = true)
+//	private Insurance insurance;
+//	
 	
 	
 //	@OneToMany(mappedBy = "vendors")

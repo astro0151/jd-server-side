@@ -14,27 +14,65 @@ public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	private int policy_id;
+	private int customer_id;
 	private String start_date;
 	private String end_date;
-	
-	@OneToOne
-	@JoinColumn(name="customer_id")
-	private Customers customers;
-	
-	@OneToOne
-	@JoinColumn(name="policy_id")
-	private PolicyDetails policy_details;
+	private String status;
 	
 	public Orders() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orders(int id, String start_date, String end_date) {
+
+
+	public Orders(int id, int policy_id, String start_date, String end_date, int customer_id ,String status) {
 		super();
 		this.id = id;
+		this.policy_id = policy_id;
 		this.start_date = start_date;
 		this.end_date = end_date;
+		this.customer_id=customer_id;
+		this.status = status;
 	}
+
+
+
+	public int getCustomer_id() {
+		return customer_id;
+	}
+
+
+
+	public void setCustomer_id(int customer_id) {
+		this.customer_id = customer_id;
+	}
+
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
+	public int getPolicy_id() {
+		return policy_id;
+	}
+
+
+
+	public void setPolicy_id(int policy_id) {
+		this.policy_id = policy_id;
+	}
+
+
 
 	public int getId() {
 		return id;

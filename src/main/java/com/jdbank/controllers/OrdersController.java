@@ -17,11 +17,12 @@ import com.jdbank.entities.Orders;
 
 import com.jdbank.repository.OrderRepo;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import jakarta.servlet.http.HttpSession;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/jd/vendors/s/policies/customers/orders")
+@RequestMapping("/api/jd/vendors/policies/customers/orders")
 public class OrdersController {
 	@Autowired
 	private OrderRepo order_repo ;
@@ -30,6 +31,8 @@ public class OrdersController {
  
 		 return order_repo.findAll();
 	 }
+	 
+	 
 	 @GetMapping("/get/{id}")
 	  public Optional<Orders> getOrdersWithId(@PathVariable Integer id){
 		//returning data from jdb datadbase as vendors table
